@@ -1,0 +1,13 @@
+$primary-color: #00a885;
+$border-color: white;
+
+.page3 {
+  .div-border-white {
+    border: 2px solid $border-color;
+  }
+  .link {
+    font-size: 16px;
+    color: $primary-color;
+    text-decoration: underline;
+  }
+}

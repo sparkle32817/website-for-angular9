@@ -1,0 +1,51 @@
+$secondary-color: #efefef;
+
+@mixin no-margin-padding {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
+
+  [class*="col-"] {
+    padding-right: 0px;
+    padding-left: 0px;
+
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+}
+
+@mixin common-label($font-size, $font-weight, $color) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $color;
+}
+
+.custom-label {
+  @include no-margin-padding();
+  &.border-line {
+    padding-bottom: 30px;
+    border-bottom: 1px solid $secondary-color;
+  }
+}
+
+.label-top {
+  @include common-label(15px, 700, black);
+}
+
+.label-left {
+  @include common-label(16px, 500, #a5aeaf);
+  &.black {
+    @include common-label(16px, 700, black);
+  }
+}
+
+.label-right {
+  @include common-label(16px, 700, #a5aeaf);
+  &.red {
+    @include common-label(16px, 700, red);
+  }
+  &.black {
+    @include common-label(16px, 700, black);
+  }
+}

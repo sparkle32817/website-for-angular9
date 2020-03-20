@@ -1,0 +1,104 @@
+$primary-color: #00a885;
+$secondary-color: #efefef;
+$fg-color: #f3f3f3;
+$bg-color: #f6f7f8;
+$white-color: white;
+$small-screen: 767px;
+
+@mixin header($bg-color, $padding, $width, $font-size) {
+  .header {
+    background-color: $bg-color;
+    padding: $padding;
+    img {
+      width: $width;
+    }
+    .header-title {
+      padding-left: 10px;
+      font-size: $font-size;
+      font-weight: bolder;
+      color: $primary-color;
+    }
+  }
+}
+
+@mixin common-style($tpadding, $font-size) {
+  padding-top: $tpadding ;
+  span {
+    font-size: $font-size;
+    font-weight: bold;
+    line-height: 1.1;
+  }
+}
+
+@mixin no-gutters {
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+@mixin response-to {
+  @media only screen and (max-width: $small-screen) {
+    @content;
+  }
+}
+
+.root {
+  background-color: $fg-color;
+
+  & > .container {
+
+    max-width: 1400px;
+    @include response-to(){
+      @include no-gutters();
+      .row {
+        @include no-gutters();
+      }
+
+      [class*="col-"] {
+        @include no-gutters();
+      }
+    }
+
+    & > .home-page {
+      background-color: $bg-color;
+      min-height: 100vh;
+      .div-content {
+
+        padding: 20px 70px;
+        @include header($bg-color, 10px, 50px, 20px);
+        @include response-to() {
+          padding: 0;
+
+          $padding: 10px 30px;
+          @include header($white-color, $padding, 40px, 15px);
+        }
+
+        .div-title {
+          @include common-style(20vh, 2.75em);
+          @include response-to() {
+            @include common-style(10vh, 1.75em);
+          }
+        }
+        .div-input {
+          @include common-style(10vh, 1.25em);
+          @include response-to() {
+            @include common-style(10vh, 1.25em);
+          }
+        }
+        .div-button {
+          @include common-style(15vh, 1.25em);
+          @include response-to() {
+            @include common-style(15vh, 1.25em);
+          }
+        }
+      }
+      .div-img {
+        background: url("../../../assets/images/background.jpg") no-repeat fixed center;
+        @include response-to() {
+          display: none;
+        }
+      }
+    }
+  }
+}

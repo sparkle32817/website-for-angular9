@@ -1,0 +1,37 @@
+$primary-color: #00a885;
+$secondary-color: #e0e0e0;
+$border-color: white;
+$padding-size: 20px;
+
+@mixin common-option($inner-color, $outer-color) {
+  .mat-radio-inner-circle {
+    background-color: $inner-color;
+  }
+  .mat-radio-outer-circle {
+    border-color: $outer-color;
+  }
+}
+
+.custom-pay-card {
+
+  // border: 1px dashed red;
+  .pay-icon-container {
+    padding-top: $padding-size;
+    padding-bottom: $padding-size;
+    border: 2px solid $border-color;
+    border-radius: 5px;
+    &.option-clicked {
+      border: 2px solid $primary-color;
+    }
+
+    .icon {
+      font-size: 40px;
+    }
+  }
+  .select-option {
+    padding-top: 10px;
+    .mat-radio-button {
+      @include common-option($primary-color, $primary-color);
+    }
+  }
+}

@@ -1,0 +1,8 @@
+<mat-form-field class="custom-selection">
+  <mat-label>{{label}}</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let item of items$ | async" [value]="item.key">
+      {{item.value}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

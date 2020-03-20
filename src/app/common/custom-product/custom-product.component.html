@@ -1,0 +1,19 @@
+<div
+  [ngClass]="{
+    'row col-12 d-flex align-items-center p-md-5 p-sm-3 p-xs-3 custom-product': true,
+    'option-clicked': radioButton.checked
+  }"
+>
+  <div class="row col-md-10">
+    <div class="col-2 d-flex align-items-center justify-content-center">
+      <mat-radio-button #radioButton></mat-radio-button>
+    </div>
+    <div class="col-10">
+      <div class="product-title">{{title}}</div>
+      <div class="product-content">{{content}}</div>
+    </div>
+  </div>
+  <div class="col-md-2 d-flex align-items-center justify-content-end product-price">
+    R$ {{price}}
+  </div>
+</div>

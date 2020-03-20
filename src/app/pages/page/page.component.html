@@ -1,0 +1,114 @@
+<div class="root">
+  <div class="col-md-12">
+    <div class="container">
+      <Header></Header>
+    </div>
+  </div>
+  <div class="col-md-12 main-body">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-12">
+          <form id="payForm">
+            <mat-horizontal-stepper linear #stepper>
+              <mat-step>
+                <Page1></Page1>
+                <div class="row col-md-12 py-5 md-px-0 div-button">
+                  <div class="col-md-4 d-flex my-2">
+                    <a routerLink="/" class="text-center btn-back"><h3 class="mb-0">Voltar</h3></a>
+                  </div>
+                  <div class="col-md-4 offset-md-4 d-flex my-2">
+                    <button mat-button matStepperNext class="text-center btn-continue"><h3 class="mb-0">Continuar</h3></button>
+                  </div>
+                </div>
+              </mat-step>
+              <mat-step>
+                <Page2></Page2>
+                <div class="row col-md-12 py-5 md-px-0 div-button">
+                  <div class="col-md-4 d-flex my-2">
+                    <button mat-button matStepperPrevious class="text-center btn-back"><h3 class="mb-0">Voltar</h3></button>
+                  </div>
+                  <div class="col-md-4 offset-md-4 d-flex my-2">
+                    <button mat-button matStepperNext class="text-center btn-continue"><h3 class="mb-0">Continuar</h3></button>
+                  </div>
+                </div>
+              </mat-step>
+              <mat-step>
+                <Page3></Page3>
+                <div class="row col-md-12 py-5 md-px-0 div-button">
+                  <div class="col-md-4 d-flex my-2">
+                    <button mat-button matStepperPrevious class="text-center btn-back"><h3 class="mb-0">Voltar</h3></button>
+                  </div>
+                  <div class="col-md-4 offset-md-4 d-flex my-2">
+                    <button mat-button matStepperNext class="text-center btn-continue"><h3 class="mb-0">Continuar</h3></button>
+                  </div>
+                </div>
+              </mat-step>
+              <mat-step>
+                <Page4></Page4>
+                <div class="row col-md-12 py-5 md-px-0 div-button">
+                  <div class="col-md-4 d-flex my-2">
+                    <button mat-button matStepperPrevious class="text-center btn-back"><h3 class="mb-0">Voltar</h3></button>
+                  </div>
+                  <div class="col-md-4 offset-md-4 d-flex my-2">
+                    <button mat-button matStepperNext class="text-center btn-continue"><h3 class="mb-0">Continuar</h3></button>
+                  </div>
+                </div>
+              </mat-step>
+              <mat-step>
+                <Page6></Page6>
+                <div class="row col-md-12 py-5 md-px-0 div-button">
+                  <div class="col-md-4 d-flex my-2">
+                    <button mat-button matStepperPrevious class="text-center btn-back"><h3 class="mb-0">Voltar</h3></button>
+                  </div>
+                  <div class="col-md-4 offset-md-4 d-flex my-2">
+                    <button mat-button matStepperNext class="text-center btn-continue"><h3 class="mb-0">Continuar</h3></button>
+                  </div>
+                </div>
+              </mat-step>
+              <mat-step>
+                <Page7></Page7>
+                <div class="row col-md-12 py-5 md-px-0 div-button">
+                  <div class="col-md-4 d-flex my-2">
+                    <button mat-button matStepperPrevious class="text-center btn-back"><h3 class="mb-0">Voltar</h3></button>
+                  </div>
+                  <div class="col-md-4 offset-md-4 d-flex my-2">
+                    <button mat-button matStepperNext class="text-center btn-continue"><h3 class="mb-0">Continuar</h3></button>
+                  </div>
+                </div>
+              </mat-step>
+              <mat-step>
+                <Page8></Page8>
+                <div class="row col-md-12 py-5 md-px-0 div-button">
+                  <div class="col-md-4 d-flex my-2">
+                    <button mat-button matStepperPrevious class="text-center btn-back"><h3 class="mb-0">Voltar</h3></button>
+                  </div>
+                  <div class="col-md-4 offset-md-4 d-flex my-2">
+                    <button mat-button matStepperNext class="text-center btn-continue"><h3 class="mb-0">Continuar</h3></button>
+                  </div>
+                </div>
+              </mat-step>
+              <mat-step>
+                <Page9></Page9>
+                <div class="row col-md-12 py-5 md-px-0 div-button">
+                  <div class="col-md-4 d-flex my-2">
+                    <button mat-button matStepperPrevious class="text-center btn-back"><h3 class="mb-0">Voltar</h3></button>
+                  </div>
+                  <div class="col-md-4 offset-md-4 d-flex my-2">
+                    <!-- <button mat-button matStepperNext class="text-center btn-continue"><h3 class="mb-0">Finalizar</h3></button> -->
+                    <a routerLink="/success" class="text-center btn-continue"><h3 class="mb-0">Finalizar</h3></a>
+                  </div>
+                </div>
+              </mat-step>
+            </mat-horizontal-stepper>
+          </form>
+        </div>
+        <div class="row col-lg-4 col-md-12 div-summary">
+          <div class="col-md-10 pt-5">
+            <Summary></Summary>
+          </div>
+          <div class="col-md-2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

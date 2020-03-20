@@ -1,0 +1,44 @@
+$small-screen: 767px;
+
+@mixin response-to {
+  @media only screen and (max-width: $small-screen) {
+    @content;
+  }
+}
+
+:host mat-toolbar {
+  align-items: center;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  // padding-top: .4rem;
+  height: 10rem
+}
+
+mat-toolbar {
+  @include response-to(){
+    height: auto !important;
+  }
+
+  mat-toolbar-row {
+    @include response-to(){
+      padding: initial !important;
+    }
+
+    .header-logo {
+      padding: .4rem;
+      width: 60px;
+      @include response-to(){
+        width: 40px;
+      }
+    }
+    .header-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #00a885;
+      @include response-to(){
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

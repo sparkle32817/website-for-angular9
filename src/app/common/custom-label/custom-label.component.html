@@ -1,0 +1,35 @@
+<div
+  [ngClass]="{
+    'col px-0 custom-label':true,
+    'border-line': borderBottom
+  }"
+  class=""
+>
+  <div class="label-top">
+    {{topLabel}}
+  </div>
+  <div class="row col-12">
+    <div class="col-6">
+      <span
+        [ngClass]="{
+          'label-left':true,
+          'black': leftLabel === 'Total'
+        }"
+      >
+        {{leftLabel}}
+      </span>
+    </div>
+    <div class="col-6 text-right">
+      <span
+        [ngClass]="{
+          'label-right':true,
+          'red': minus,
+          'black': leftLabel === 'Total'
+        }"
+      >
+        <span *ngIf="minus">-</span>
+        R$ {{rightLabel}}
+      </span>
+    </div>
+  </div>
+</div>

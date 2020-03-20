@@ -1,0 +1,77 @@
+$primary-color: #00a885;
+$secondary-color: #efefef;
+$error-color: #f44336;
+$white-color: white;
+$error-font-size: 14px;
+$material-font: 'Material Icons';
+
+@mixin change-input($border-width, $border-color) {
+  .mat-form-field-flex {
+    background-color: $white-color;
+    padding: 10px 10px 10px 15px;
+    border: $border-width solid $border-color;
+    border-radius: 5px;
+  }
+  .mat-form-field-underline {
+    display: none;
+  }
+}
+
+.material-icons {
+  font-family: $material-font;
+}
+.mat-error {
+  font-size: $error-font-size;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-subscript-wrapper {
+  margin-top: 0;
+  padding-left: 5px;
+  top: calc(100% - 1.6666666667em);
+}
+
+// .custom-input {
+//   padding: 5px;
+// }
+
+.custom-input {
+  padding: 5px;
+  width: 100%;
+
+  input {
+    font-size: 1.75rem;
+    font-weight: 600;
+  }
+
+  .clear-icon {
+    color: $primary-color;
+    cursor: pointer;
+  }
+
+  .suffix-icon-visible {
+    visibility: visible;
+    color: $error-color;
+    font-size: 200%;
+  }
+
+  .suffix-icon-invisible {
+    visibility: hidden;
+  }
+
+  .mat-form-field-wrapper {
+    @include change-input(1px, $secondary-color);
+  }
+
+  &.mat-form-field-invalid {
+    .mat-form-field-wrapper {
+      @include change-input(1px, $error-color);
+    }
+  }
+
+  &.green-border {
+    .mat-form-field-wrapper {
+      @include change-input(2px, $primary-color);
+    }
+  }
+
+}

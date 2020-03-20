@@ -1,0 +1,67 @@
+$bg-color: white;
+$primary-color: #00a885;
+$secondary-color: #efefef;
+$padding-size: 25px;
+$title-size: 22px;
+$title-color: black;
+$content-size: 16px;
+$content-color: #a5aeaf;
+$price-size: 24px;
+$price-color: black;
+
+@mixin common-text($font-size, $font-weight, $color) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $color;
+}
+
+@mixin common-option($inner-color, $outer-color, $size, $border-radius) {
+  .mat-radio-inner-circle {
+    background-color: $inner-color !important;
+    border-radius: $border-radius;
+    width: $size;
+    height: $size;
+  }
+  .mat-radio-outer-circle {
+    border-color: $outer-color !important;
+    border-radius: $border-radius;
+    width: $size;
+    height: $size;
+  }
+}
+
+.custom-product {
+  $custom-product: &;
+
+  background-color: $bg-color;
+  padding: $padding-size;
+  border: 1px solid $secondary-color;
+  border-radius: 5px;
+  color: $primary-color;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  }
+
+  &.option-clicked {
+    border: 2px solid $primary-color;
+  }
+
+  .product-title {
+    @include common-text($title-size, bold, $title-color);
+  }
+  .product-content {
+    padding-top: 10px;
+    @include common-text($content-size, normal, $content-color);
+  }
+  .product-price {
+    @include common-text($price-size, bold, $price-color);
+  }
+
+  .mat-radio-button {
+    width: 30px;
+    height: 30px;
+    @include common-option($primary-color, $primary-color, 30px, 5px);
+  }
+}

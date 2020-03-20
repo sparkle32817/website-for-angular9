@@ -1,0 +1,62 @@
+<div
+  [ngClass]="{
+    'summary-module':true,
+    'summary-show': showable
+  }"
+>
+  <div class="row col-12 no-gutters summary-title">
+    <div class="col-10">
+      <h2 class="font-weight-bold py-3">Resumo</h2>
+    </div>
+    <div class="col-2 d-flex align-items-center justify-content-center">
+      <div class="position-relative d-inline-flex">
+        <div class="btn-down" (click)="btnClick()"></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12 py-3">
+    <CustomLabel topLabel='' leftLabel='Cartão de TODOS' rightLabel='23,10'></CustomLabel>
+  </div>
+  <div class="col-md-12 py-3">
+    <CustomLabel topLabel='Adicionais' leftLabel='Prepara TODOS' rightLabel='28,40'></CustomLabel>
+  </div>
+  <div class="col-md-12 pt-2">
+    <CustomInput [label]="'Voucher / Cupom'" [type]="'text'" [placeholder]="'Voucher / Cupom'" [closable]="true"></CustomInput>
+  </div>
+  <div class="col-md-12">
+    <CustomInput [label]="'Indicação de amigo'" [type]="'text'" [placeholder]="'Indicação de amigo'" [closable]="true"></CustomInput>
+  </div>
+  <div class="col-md-12 pt-3">
+    <CustomLabel topLabel='' leftLabel='Cumpom aplicado' rightLabel='28,40' minus='true' borderBottom='true'></CustomLabel>
+  </div>
+  <div class="col-md-12 pt-5">
+    <CustomLabel topLabel='' leftLabel='Total' rightLabel='28,40' borderBottom='true'></CustomLabel>
+  </div>
+  <div class="col-md-12 py-5">
+    <div class="summary-description">
+      Lorem lpsum is simply dummy text of the printing and typesetting industry.
+      <a>Termos de uso</a>
+    </div>
+  </div>
+</div>
+<div
+  [ngClass]="{
+    'summary-response':true,
+    'summary-response-show': !showable
+  }"
+>
+  <div class="div-container">
+    <div class="row no-gutters">
+      <div class="col-10">
+        <div class="text-total">Totoal</div>
+        <div class="text-value">{{'R$ 28,40'}}</div>
+      </div>
+      <div class="col-2 d-flex align-items-center justify-content-center">
+        <div class="position-relative d-inline-flex">
+          <div class="btn-up" (click)="btnClick()"></div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-bar"></div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+$primary-color: #00a885;
+$secondary-color: #efefef;
+$error-color: #f44336;
+$bg-color: white;
+
+.page9 {
+  .blank-part {
+    background-color: $bg-color;
+    border: 1px solid $secondary-color;
+    border-radius: 5px;
+    height: 60vh;
+  }
+}

@@ -1,0 +1,101 @@
+$bg-color: #f6f7f8;
+$primary-color: #00a885;
+$white-color: white;
+$small-screen: 767px;
+
+@mixin text-common($ypadding, $font-size, $font-weight, $font-color) {
+  padding: $ypadding 0;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $font-color;
+}
+
+@mixin no-gutters {
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+@mixin response-to {
+  @media only screen and (max-width: $small-screen) {
+    @content;
+  }
+}
+
+.root {
+  background-color: white;
+  min-height: 100vh;
+
+  @include response-to(){
+    @include no-gutters();
+    .row {
+      @include no-gutters();
+    }
+
+    [class*="col-"] {
+      @include no-gutters();
+    }
+  }
+
+  .container {
+    max-width: 1400px;
+  }
+}
+
+div.main-body {
+  background-color: #f3f3f3;
+
+  & > .container {
+    background-color: #f6f7f8;
+    min-height: 90vh;
+    padding: 70px 150px;
+    @include response-to(){
+      padding: 0;
+    }
+
+    & > .page-success {
+      background-color: $white-color;
+      padding: 50px 100px;
+      border-left: 4px solid $primary-color;
+      border-radius: 5px;
+      @include response-to(){
+        background-color: $bg-color;
+        padding: 10px 20px;
+        border: none;
+      }
+
+      .icon {
+        padding-top: 30px;
+        i {
+          font-size: 8em;
+          color: $primary-color;
+        }
+      }
+      .text-transaciton {
+        @include text-common(25px, 2.5em, bolder, $primary-color);
+      }
+      .text-membership {
+        @include text-common(10px, 1.25em, bold, black);
+      }
+      .code-part {
+        padding: 20px 0;
+        span {
+          @include text-common(0, 1em, bold, black);
+        }
+        .code {
+          @include text-common(0, 2.25em, bold, $primary-color);
+          padding: 50px 100px;
+          border: 0.5px dashed $primary-color;
+          border-radius: 3px;
+          @include response-to() {
+            padding: 30px 50px;
+          }
+        }
+      }
+      .text-sentence {
+        @include text-common(20px, 1em, 500, black);
+      }
+    }
+  }
+}

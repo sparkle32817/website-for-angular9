@@ -1,0 +1,78 @@
+<div class="page2 pt-md-5">
+  <div class="col py-4">
+    <h2 class="font-weight-bold">Ótimo, gostaríamos de saber seu endereço</h2>
+  </div>
+  <div class="row col-md-12 pt-3">
+    <div class="col-md-5 pr-md-2">
+      <CustomInput
+        [label]="'CEP'"
+        [type]="'text'"
+        [placeholder]="'CEP'"
+      ></CustomInput>
+    </div>
+  </div>
+  <div class="row col-md-12">
+    <div class="col-md-8 pr-md-2">
+      <CustomInput
+        [label]="'Endereço'"
+        [type]="'text'"
+        [placeholder]="'Endereço'"
+      ></CustomInput>
+    </div>
+    <div class="col-md-4 pl-md-0">
+      <CustomInput
+        [label]="'Número'"
+        [type]="'text'"
+        [placeholder]="'Número'"
+      ></CustomInput>
+    </div>
+  </div>
+  <div class="row col-md-12">
+    <div class="col-md-5 pr-md-2">
+      <CustomInput
+        [label]="'Complemento'"
+        [type]="'text'"
+        [placeholder]="'Complemento'"
+      ></CustomInput>
+    </div>
+    <div class="col-md-7 pl-md-0">
+      <CustomInput
+        [label]="'Bairro'"
+        [type]="'text'"
+        [placeholder]="'Bairro'"
+      ></CustomInput>
+    </div>
+  </div>
+  <div class="row col-md-12">
+    <div class="col-md-6 pr-md-2">
+      <CustomInput
+        [label]="'Bairro'"
+        [type]="'text'"
+        [placeholder]="'Bairro'"
+      ></CustomInput>
+    </div>
+    <div class="col-md-6 pl-md-0">
+      <CustomInput
+        [label]="'Cidade'"
+        [type]="'text'"
+        [placeholder]="'Cidade'"
+      ></CustomInput>
+    </div>
+  </div>
+  <div class="row col-md-12">
+    <div class="col-md-4">
+      <CustomSelect
+        [label]="'Estado'"
+        [items$]="states$"
+      ></CustomSelect>
+    </div>
+  </div>
+  <!-- <div class="row col-md-12 py-5 md-px-0 div-button">
+    <div class="col-md-4 d-flex my-2">
+      <button type="button" matStepperPrevious class="text-center btn-back"><h3 class="mb-0">Voltar</h3></button>
+    </div>
+    <div class="col-md-4 offset-md-4 d-flex my-2">
+      <button type="button" matStepperNext class="text-center btn-continue"><h3 class="mb-0">Continuar</h3></button>
+    </div>
+  </div> -->
+</div>

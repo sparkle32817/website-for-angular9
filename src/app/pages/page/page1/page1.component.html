@@ -1,0 +1,84 @@
+<div class="page1 pt-md-5">
+  <div class="col py-4">
+    <h2 class="font-weight-bold">Vini, Vamos continuar? informe os seus dados</h2>
+  </div>
+  <div class="row col-md-12 pt-3">
+    <div class="col-md-5 pr-md-2">
+      <CustomInput
+        [label]="'Primeiro nome'"
+        [type]="'text'"
+        [placeholder]="'Primeiro nome'"
+      ></CustomInput>
+      <!-- <input formControlName="name1"> -->
+    </div>
+    <div class="col-md-7 pl-md-0">
+      <CustomInput
+        [label]="'Sobrenome completo'"
+        [type]="'text'"
+        [placeholder]="'Sobrenome completo'"
+      ></CustomInput>
+    </div>
+  </div>
+  <div class="row col-md-12">
+    <div class="col-md-3 pr-md-2">
+      <CustomSelect
+        [label]="'Documento'"
+        [items$]="documents$"
+      ></CustomSelect>
+    </div>
+    <div class="row col-md-9 px-md-0">
+      <div class="col-md-6 pr-md-2">
+        <CustomInput
+          [label]="'CPF'"
+          [type]="'text'"
+          [placeholder]="'CPF'"
+        ></CustomInput>
+      </div>
+      <div class="col-md-6 px-md-0">
+        <CustomDatepicker
+          label="Data de Nascimento"
+        ></CustomDatepicker>
+      </div>
+    </div>
+  </div>
+  <div class="row col-md-12">
+    <div class="col-md-5 pr-md-2">
+      <CustomInput
+        [label]="'E-mail'"
+        [type]="'email'"
+        [placeholder]="'E-mail'"
+      ></CustomInput>
+    </div>
+    <div class="row col-md-7 px-md-0">
+      <div class="col-md-6 pr-md-2">
+        <CustomSelect
+          [label]="'Sexo'"
+          [items$]="genders$"
+        ></CustomSelect>
+      </div>
+      <div class="col-md-6 px-md-0">
+        <CustomSelect
+          [label]="'Estado civil'"
+          [items$]="marriedStatus$"
+        ></CustomSelect>
+      </div>
+    </div>
+  </div>
+  <div class="row col-md-12">
+    <div class="col-md-5">
+      <CustomInput
+        [label]="'Telefone'"
+        [type]="'text'"
+        [placeholder]="'Telefone'"
+      ></CustomInput>
+    </div>
+  </div>
+  <!-- <div class="row col-md-12 py-5 md-px-0 div-button">
+    <div class="col-md-4 d-flex my-2">
+      <a routerLink="/" class="text-center btn-back"><h3 class="mb-0">Voltar</h3></a>
+    </div>
+    <div class="col-md-4 offset-md-4 d-flex my-2">
+      <button mat-button matStepperNext class="text-center btn-continue"><h3 class="mb-0">Continuar</h3></button>
+    </div>
+  </div> -->
+</div>

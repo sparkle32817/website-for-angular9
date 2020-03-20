@@ -1,0 +1,34 @@
+$primary-color: #efefef;
+$white-color: white;
+$green-color: #00a885;
+$material-font: 'Material Icons';
+
+@mixin change-date($border-width, $border-color) {
+  .mat-form-field-flex {
+    background-color: $white-color;
+    padding: 10px 10px 10px 15px;
+    border: $border-width solid $border-color;
+    border-radius: 5px;
+  }
+  .mat-form-field-underline {
+    display: none;
+  }
+}
+
+.custom-datepicker {
+  @include change-date(1px, $primary-color);
+  padding: 5px;
+  width: 100%;
+
+  .material-icons {
+    font-family: $material-font;
+  }
+
+  button.mat-icon-button {
+    outline: none;
+    color: rgba(0, 0, 0, 0.54);
+  }
+
+}
+
+

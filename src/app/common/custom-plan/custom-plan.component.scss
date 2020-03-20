@@ -1,0 +1,27 @@
+$bg-color: white;
+$primary-color: #00a885;
+$secondary-color: #efefef;
+$padding-size: 25px;
+$icon-size: 55px;
+$text-size: 22px;
+
+.custom-plan {
+  background-color: $bg-color;
+  padding: $padding-size;
+  border: 1px solid $secondary-color;
+  border-radius: 5px;
+  color: $primary-color;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  }
+
+  .icon {
+    font-size: $icon-size;
+  }
+  .text {
+    margin-left: 20px;
+    font-size: $text-size;
+  }
+}

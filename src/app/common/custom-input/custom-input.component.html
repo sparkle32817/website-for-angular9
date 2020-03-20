@@ -1,0 +1,41 @@
+<!-- <form class="custom-input"> -->
+  <mat-form-field
+    [ngClass]="{
+      'custom-input':true,
+      'green-border': value && closable
+    }"
+  >
+    <!-- <mat-label>{{ label }}-{{type === 'email'}}</mat-label> -->
+    <mat-label>{{ label }}</mat-label>
+    <input matInput
+      [formControl]="formControl"
+      [errorStateMatcher]="matcher"
+      placeholder="{{ placeholder }}"
+      [(ngModel)]="value"
+      (blur)="onBlur()"
+    >
+    <mat-icon matSuffix
+      [ngClass]="{
+       'suffix-icon-visible': getErrorStatus(formControl),
+       'suffix-icon-invisible': !getErrorStatus(formControl)
+      }"
+    >error</mat-icon>
+    <mat-icon matSuffix
+      class="clear-icon"
+      *ngIf="value && closable"
+      mat-icon-button aria-label="Clear"
+      (click)="value=''"
+    >cancel_outline</mat-icon>
+    <mat-error
+     *ngIf="formControl.hasError('email')
+            && !formControl.hasError('required') && type==='email'"
+    >
+      Please enter a valid email address
+    </mat-error>
+    <mat-error
+      *ngIf="formControl.hasError('required')"
+    >
+      O {{ label }} digitado não é <strong>válido</strong>
+    </mat-error>
+  </mat-form-field>
+<!-- </form> -->

@@ -1,0 +1,85 @@
+<div class="page7 p-md-5">
+  <div class="col py-4">
+    <h2 class="font-weight-bold">Nos informe os dados do dependente que deseja incluir</h2>
+  </div>
+  <div class="row col-md-12 pt-3">
+    <div class="col-md-5 pr-md-0">
+      <CustomInput
+        [label]="'Primeiro nome'"
+        [type]="'text'"
+        [placeholder]="'Primeiro nome'"
+      ></CustomInput>
+    </div>
+    <div class="col-md-7 pl-md-2">
+      <CustomInput
+        [label]="'Sobrenome completo'"
+        [type]="'text'"
+        [placeholder]="'Sobrenome completo'"
+      ></CustomInput>
+    </div>
+  </div>
+  <div class="row col-md-12">
+    <div class="col-md-5 pr-md-0">
+      <CustomDatepicker
+        label="Data de Nascimento"
+      ></CustomDatepicker>
+    </div>
+    <div class="col-md-3 px-md-2">
+      <CustomSelect
+        [label]="'Documento'"
+        [items$]="documents$"
+      ></CustomSelect>
+    </div>
+    <div class="col-md-4 pl-md-0">
+      <CustomInput
+        [label]="'CPF'"
+        [type]="'text'"
+        [placeholder]="'CPF'"
+      ></CustomInput>
+    </div>
+  </div>
+  <div class="row col-md-12">
+    <div class="col-md-5 pr-md-0">
+      <CustomSelect
+        [label]="'Grau de parentesco'"
+        [items$]="relations$"
+      ></CustomSelect>
+    </div>
+    <div class="col-md-4 px-md-2">
+      <CustomDatepicker
+        label="Data de nascimento"
+      ></CustomDatepicker>
+    </div>
+    <div class="col-md-3 pl-md-0">
+      <CustomSelect
+        [label]="'Sexo'"
+        [items$]="genders$"
+      ></CustomSelect>
+    </div>
+  </div>
+  <div class="row col-md-12">
+    <div class="col-md-5 pr-md-0">
+      <CustomInput
+        [label]="'E-mail'"
+        [type]="'email'"
+        [placeholder]="'E-mail'"
+      ></CustomInput>
+    </div>
+    <div class="col-md-3 px-md-2">
+      <CustomSelect
+        [label]="'Estado civil'"
+        [items$]="marriedStatus$"
+      ></CustomSelect>
+    </div>
+    <div class="col-md-4 pl-md-0">
+      <CustomInput
+        [label]="'Telefone'"
+        [type]="'text'"
+        [placeholder]="'Telefone'"
+      ></CustomInput>
+    </div>
+  </div>
+  <!-- <div class="container px-md-5">
+    <Buttons [backPath]="'/page6'" [continuePath]="'/page8'"></Buttons>
+  </div> -->
+</div>

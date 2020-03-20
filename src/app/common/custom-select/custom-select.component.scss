@@ -1,0 +1,46 @@
+$secondary-color: #efefef;
+$error-color: #f44336;
+$white-color: white;
+$green-color: #00a885;
+$error-font-size: 14px;
+$material-font: 'Material Icons';
+
+@mixin change-select($border-width, $border-color) {
+  .mat-form-field-flex {
+    background-color: $white-color;
+    padding: 10px 10px 10px 15px;
+    border: $border-width solid $border-color;
+    border-radius: 5px;
+  }
+  .mat-form-field-underline {
+    display: none;
+  }
+}
+
+@mixin one-arrow($right, $rotate) {
+  content: "";
+  position: absolute;
+  right: $right;
+  top: 25%;
+  -webkit-transform: rotate($rotate);
+  transform: rotate($rotate);
+  display: inline-block;
+  width: 10px;
+  height: 2px;
+  background-color: #414042;
+}
+
+.custom-selection {
+  @include change-select(1px, $secondary-color);
+  padding: 5px;
+  width: 100%;
+  .mat-select-arrow {
+    border: none;
+    &:before {
+      @include one-arrow(10px, 45deg);
+    }
+    &:after {
+      @include one-arrow(4px, -45deg);
+    }
+  }
+}

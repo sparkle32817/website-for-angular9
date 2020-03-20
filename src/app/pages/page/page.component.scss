@@ -1,0 +1,118 @@
+$bg-color: #f6f7f8;
+$btn-ypadding: 20px;
+$btn-back-color: #e3e7eb;
+$btn-back-hover-color: #d6d4d4;
+$btn-continue-color: #00a885;
+$btn-continue-hover-color: #00a0a0;
+$small-screen: 767px;
+
+@mixin common-button($bg-color, $y-padding, $border-color, $color, $bg-hover-color, $hover-border-color, $hover-color) {
+  background-color: $bg-color;
+  width: 100%;
+  padding-top: $y-padding;
+  padding-bottom: $y-padding;
+  border: 2px solid $border-color;
+  border-radius: 5px;
+  color: $color;
+  cursor: pointer;
+  &:hover {
+    background-color: $bg-hover-color;
+    border: 2px solid $hover-border-color;
+    color: $hover-color;
+    text-decoration: none;
+  }
+}
+
+@mixin no-gutters {
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+@mixin response-to {
+  @media only screen and (max-width: $small-screen) {
+    @content;
+  }
+}
+
+.root {
+  background-color: white;
+  min-height: 100vh;
+  @include response-to(){
+    @include no-gutters();
+    .row {
+      @include no-gutters();
+    }
+
+    [class*="col-"] {
+      @include no-gutters();
+    }
+  }
+  .container {
+    max-width: 1400px;
+  }
+}
+
+div.main-body {
+
+  background-color: #f3f3f3;
+
+  & > .container {
+    background-color: #f6f7f8;
+    min-height: 90vh;
+    @include response-to() {
+      @include no-gutters();
+    }
+
+    .mat-stepper-horizontal {
+      background-color: #f6f7f8;
+      .mat-horizontal-stepper-header-container {
+        display: none;
+      }
+      @include response-to() {
+        .mat-horizontal-content-container {
+          padding: 20px 10px;
+        }
+      }
+    }
+    .div-button {
+      @include response-to() {
+        padding-bottom: 100px !important;
+      }
+      .btn-back {
+        @include common-button(
+          $bg-color,
+          $btn-ypadding,
+          $btn-back-color,
+          $btn-back-hover-color,
+          $bg-color,
+          $btn-back-hover-color,
+          $btn-back-hover-color
+        );
+      }
+      .btn-continue {
+        @include common-button(
+          $btn-continue-color,
+          $btn-ypadding,
+          $btn-continue-color,
+          white,
+          $btn-continue-hover-color,
+          $btn-continue-hover-color,
+          white
+        );
+      }
+    }
+    .div-summary {
+      @include response-to() {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+      }
+      Summary {
+        cursor: default;
+      }
+    }
+  }
+}
