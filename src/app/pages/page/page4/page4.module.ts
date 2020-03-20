@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
+import {MatRadioModule} from '@angular/material/radio';
+
 
 import {ButtonsModule} from '../../../modules/buttons/buttons.module';
 import {CustomInputModule} from '../../../common/custom-input/custom-input.module';
@@ -16,6 +20,8 @@ import {Page4Component} from './page4.component';
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    MatRadioModule,
     ButtonsModule,
     CustomInputModule,
     CustomSelectModule,
